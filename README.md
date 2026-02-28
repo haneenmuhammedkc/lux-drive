@@ -54,7 +54,6 @@ The project includes both **User Interface** and **Admin Dashboard** with comple
 ---
 
 ## 📁 Project Structure
-
 LUX-DRIVE/
 │
 ├── backend/
