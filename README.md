@@ -54,54 +54,105 @@ The project includes both **User Interface** and **Admin Dashboard** with comple
 ---
 
 ## 📁 Project Structure
+
+```
 LUX-DRIVE/
 │
 ├── backend/
-│ ├── config/
-│ │ └── db.js
-│ │
-│ ├── controllers/
-│ │ ├── carController.js
-│ │ └── bookingController.js
-│ │
-│ ├── models/
-│ │ ├── Car.js
-│ │ └── Booking.js
-│ │
-│ ├── routes/
-│ │ ├── carRoutes.js
-│ │ └── bookingRoutes.js
-│ │
-│ ├── server.js
-│ ├── package.json
-│ └── .env
+│   ├── config/
+│   │   └── db.js
+│   │
+│   ├── controllers/
+│   │   ├── carController.js
+│   │   └── bookingController.js
+│   │
+│   ├── models/
+│   │   ├── Car.js
+│   │   └── Booking.js
+│   │
+│   ├── routes/
+│   │   ├── carRoutes.js
+│   │   └── bookingRoutes.js
+│   │
+│   ├── server.js
+│   ├── package.json
+│   └── .env
 │
 ├── frontend/
-│ ├── public/
-│ └── src/
-│ ├── assets/
-│ ├── components/
-│ │ ├── CarCard.jsx
-│ │ ├── Navbar.jsx
-│ │ ├── Footer.jsx
-│ │ ├── StatusBadge.jsx
-│ │ └── ...
-│ │
-│ ├── modals/
-│ │ ├── AddCarModal.jsx
-│ │ ├── EditCarModal.jsx
-│ │ └── BookingModal.jsx
-│ │
-│ ├── pages/
-│ │ ├── HomePage.jsx
-│ │ ├── CarsPage.jsx
-│ │ ├── CarDetails.jsx
-│ │ ├── AdminDashboard.jsx
-│ │ ├── AdminCars.jsx
-│ │ └── AdminBookings.jsx
-│ │
-│ ├── App.jsx
-│ └── main.jsx
+│   ├── public/
+│   └── src/
+│       ├── assets/
+│       ├── components/
+│       │   ├── CarCard.jsx
+│       │   ├── Navbar.jsx
+│       │   ├── Footer.jsx
+│       │   ├── StatusBadge.jsx
+│       │   └── ...
+│       │
+│       ├── modals/
+│       │   ├── AddCarModal.jsx
+│       │   ├── EditCarModal.jsx
+│       │   └── BookingModal.jsx
+│       │
+│       ├── pages/
+│       │   ├── HomePage.jsx
+│       │   ├── CarsPage.jsx
+│       │   ├── CarDetails.jsx
+│       │   ├── AdminDashboard.jsx
+│       │   ├── AdminCars.jsx
+│       │   └── AdminBookings.jsx
+│       │
+│       ├── App.jsx
+│       └── main.jsx
 │
 ├── .gitignore
 └── README.md
+```
+
+---
+
+## 🚀 Installation & Setup
+
+### 1️⃣ Clone Repository
+
+```bash
+git clone https://github.com/your-username/LuxDrive.git
+cd LuxDrive
+```
+
+### 2️⃣ Backend Setup
+
+```bash
+cd backend
+npm install
+npm run dev
+```
+
+### 3️⃣ Frontend Setup
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+---
+
+## 🌍 Environment Variables
+
+Create a `.env` file inside backend:
+
+```
+PORT=5000
+MONGO_URI=your_mongodb_connection_string
+```
+
+---
+
+## 📌 Future Improvements
+
+- JWT Authentication
+- Role-based access control
+- Pagination
+- Price range filtering
+- Deployment
