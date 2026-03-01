@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
+import Button from '../components/Button'
 
 const BookingModal = ({ car, onClose }) => {
   const [totalPrice, setTotalPrice] = useState(0)
@@ -45,56 +46,64 @@ const BookingModal = ({ car, onClose }) => {
   }
 
   return (
-    <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-        <div className="bg-white w-[90%] max-w-2xl rounded-2xl p-6">
+  <div className="fixed inset-0 backdrop-blur-xs flex items-center justify-center">
+    <div className="w-2xl bg-white/90 backdrop-blur-xl rounded-3xl shadow-2xl p-8 relative">
 
-            {/* Header */}
-            <div className="flex justify-between items-center border-b pb-3">
-            <h2 className="text-xl font-semibold">Book This Car</h2>
-            </div>
+      {/* Header */}
+      <div className="flex justify-between items-center mb-6">
+        <h2 className="text-2xl font-bold tracking-wide uppercase"> Book Your Ride </h2>
+      </div>
 
-            {/* Car Summary */}
-            <div className="flex gap-4 items-center py-4">
-            <img src={car?.image} className="w-24 h-16 object-cover rounded-lg" />
-            <div>
-                <h3 className="font-semibold">{car?.title}</h3>
-                <p className="text-sm text-gray-500">₹{car?.price}/day</p>
-            </div>
-            </div>
-
-            {/* Form */}
-            <div className="grid grid-cols-2 gap-4">
-              <div className='flex flex-col'>
-                <input type="date" name="pickupDate" value={bookingData.pickupDate} onChange={handleChange} />
-                <input type="date" name="returnDate" value={bookingData.returnDate} onChange={handleChange} />
-                <input type="time" name="pickupTime" value={bookingData.pickupTime} onChange={handleChange} />
-              </div>
-              <div className='flex flex-col'>
-                <input type="text" placeholder="Full Name" name="name" value={bookingData.name} onChange={handleChange} />
-                <input type="tel" placeholder="Phone Number" name="phone" value={bookingData.phone} onChange={handleChange} />
-                <input type="text" placeholder="Pickup Location" name="location" value={bookingData.location} onChange={handleChange} />
-              </div>
-            </div>
-
-            {/* Price Summary */}
-            <div className="bg-gray-50 rounded-xl p-4 mt-4">
-              <div className="flex justify-between">
-                <span>Total</span>
-                <span>₹{totalPrice}</span>
-              </div>
-            </div>
-
-            {/* Footer Buttons */}
-            <div className="flex justify-end gap-3 pt-4 border-t mt-4">
-            <button onClick={onClose} className="px-4 py-2 border rounded-lg">Cancel</button>
-            <button onClick={handleSubmit} className="px-4 py-2 bg-black text-white rounded-lg">
-                Confirm Booking
-            </button>
-            </div>
-
+      {/* Car Summary */}
+      <div className="flex items-center gap-6 bg-gray-50 rounded-2xl p-4 mb-6">
+        <img src={car?.image} className="w-28 h-20 object-cover rounded-xl" />
+        <div>
+          <h3 className="text-lg font-semibold">{car?.title}</h3>
+          <p className="text-sm text-gray-500"> ₹{car?.price} / day </p>
         </div>
+      </div>
+
+      {/* Form Section */}
+      <div className="grid md:grid-cols-2 gap-6">
+
+        {/* Left Side */}
+        <div className="flex flex-col gap-4">
+          <input type="date" name="pickupDate" value={bookingData.pickupDate} onChange={handleChange} className="input-style" />
+          <input type="date" name="returnDate" value={bookingData.returnDate} onChange={handleChange} className="input-style" />
+          <input type="time" name="pickupTime" value={bookingData.pickupTime} onChange={handleChange} className="input-style" />
+        </div>
+
+        {/* Right Side */}
+        <div className="flex flex-col gap-4">
+          <input type="text" placeholder="Full Name" name="name" value={bookingData.name} onChange={handleChange}
+            className="input-style" />
+          <input type="tel" placeholder="Phone Number" name="phone" value={bookingData.phone} onChange={handleChange}
+            className="input-style" />
+          <input type="text" placeholder="Pickup Location" name="location" value={bookingData.location} onChange={handleChange}
+            className="input-style" />
+        </div>
+      </div>
+
+      {/* Price */}
+      <div className="mt-8 bg-zinc-50 rounded-2xl p-5 flex justify-between items-center shadow-md">
+        <span className="text-lg font-semibold">Total Amount</span>
+        <span className="text-2xl font-bold">₹{totalPrice}</span>
+      </div>
+
+      {/* Buttons */}
+      <div className="flex justify-end gap-4 mt-8">
+        <Button variant="cancel" onClick={onClose} className="px-6">
+          Cancel
+        </Button>
+
+        <Button variant="primary" onClick={handleSubmit} className="px-8">
+          Confirm Booking
+        </Button>
+      </div>
+
     </div>
-  )
+  </div>
+)
 }
 
 export default BookingModal

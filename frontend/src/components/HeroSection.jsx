@@ -1,6 +1,7 @@
 import React from 'react'
 import car from '../assets/car.png'
 import { Link } from 'react-router-dom'
+import Button from './Button'
 
 const HeroSection = () => {
     
@@ -14,10 +15,7 @@ const HeroSection = () => {
                 Premium cars. Seamless bookings. Ultimate experience.
             </p>
             <Link to="/cars">
-                <button className="h-12 w-40 bg-black text-white rounded-md font-semibold hover:bg-gray-800 cursor-pointer
-                  hover:scale-105 transition">
-                    Browse Cars
-                </button>
+                <Button variant="primary">Browse Cars</Button>
             </Link>
         </div>
     </div>

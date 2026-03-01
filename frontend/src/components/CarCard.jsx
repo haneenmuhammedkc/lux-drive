@@ -1,6 +1,7 @@
 import React from "react"
 import { FiHeart } from "react-icons/fi"
 import { Link } from "react-router-dom"
+import Button from "./Button"
 
 const CarCard = ({ car }) => {
   if (!car) return null
@@ -24,9 +25,9 @@ const CarCard = ({ car }) => {
 
         {/* Button */}
         <div className="mt-auto">
-          <button className="w-full bg-sky-950 hover:bg-sky-900 text-white py-2 rounded-md cursor-pointer">
+          <Button variant="primary" className="w-full">
             Book Now
-          </button>
+          </Button>
         </div>
 
       </div>

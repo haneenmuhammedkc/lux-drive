@@ -4,6 +4,7 @@ import axios from "axios"
 import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
 import BookingModal from "../modals/BookingModal"
+import Button from "../components/Button"
 
 const CarDetails = () => {
   const { id } = useParams()
@@ -53,10 +54,9 @@ const CarDetails = () => {
             <p><span className="font-semibold">Fuel:</span> {car.fuelType}</p>
           </div>
 
-          <button onClick={()=>setShowBookingModal(true)}
-            className="bg-sky-950 text-white px-6 py-3 rounded-lg hover:bg-sky-800 transition">
-            Book Now
-          </button>
+          <Button variant="outline" className="w-90" onClick={()=>setShowBookingModal(true)}>
+            Book Your's Now
+          </Button>
         </div>
       </div>
 
