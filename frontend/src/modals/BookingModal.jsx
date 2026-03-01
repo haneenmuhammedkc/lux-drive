@@ -45,6 +45,9 @@ const BookingModal = ({ car, onClose }) => {
     }
   }
 
+  const inputStyle =
+  "border border-gray-300 rounded-xl px-4 py-2 outline-none focus:ring-2 focus:ring-sky-950 transition duration-200 bg-white"
+
   return (
   <div className="fixed inset-0 backdrop-blur-xs flex items-center justify-center">
     <div className="w-2xl bg-white/90 backdrop-blur-xl rounded-3xl shadow-2xl p-8 relative">
@@ -68,19 +71,19 @@ const BookingModal = ({ car, onClose }) => {
 
         {/* Left Side */}
         <div className="flex flex-col gap-4">
-          <input type="date" name="pickupDate" value={bookingData.pickupDate} onChange={handleChange} className="input-style" />
-          <input type="date" name="returnDate" value={bookingData.returnDate} onChange={handleChange} className="input-style" />
-          <input type="time" name="pickupTime" value={bookingData.pickupTime} onChange={handleChange} className="input-style" />
+          <input type="date" name="pickupDate" value={bookingData.pickupDate} onChange={handleChange} className={inputStyle} />
+          <input type="date" name="returnDate" value={bookingData.returnDate} onChange={handleChange} className={inputStyle} />
+          <input type="time" name="pickupTime" value={bookingData.pickupTime} onChange={handleChange} className={inputStyle} />
         </div>
 
         {/* Right Side */}
         <div className="flex flex-col gap-4">
           <input type="text" placeholder="Full Name" name="name" value={bookingData.name} onChange={handleChange}
-            className="input-style" />
+            className={inputStyle} />
           <input type="tel" placeholder="Phone Number" name="phone" value={bookingData.phone} onChange={handleChange}
-            className="input-style" />
+            className={inputStyle} />
           <input type="text" placeholder="Pickup Location" name="location" value={bookingData.location} onChange={handleChange}
-            className="input-style" />
+            className={inputStyle} />
         </div>
       </div>
 

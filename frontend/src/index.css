@@ -1,5 +1,1 @@
 @import "tailwindcss";
-
-.input-style {
-  @apply border border-gray-300 rounded-xl px-4 py-2 outline-none focus:ring-2 focus:ring-sky-950 transition duration-200 bg-white;
-}
